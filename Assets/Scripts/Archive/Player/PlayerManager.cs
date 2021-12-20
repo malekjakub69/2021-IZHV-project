@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.InputManager;
 using UnityEngine;
-using LP.FDG.InputManager;
 
 
-namespace LP.FDG.Player
+
+namespace Game.Player
 {
 
     public class PlayerManager : MonoBehaviour

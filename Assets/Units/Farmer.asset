@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e6fb682ed5044f1beefd1af6c8f147, type: 3}
   m_Name: Farmer
   m_EditorClassIdentifier: 
-  inPlyerUnit: 0
-  unitName: 
   Type: 1
+  unitName: 
   playerPrefab: {fileID: 3056100242859700742, guid: dcb6c0b79d4e36d068150cc6e9d0d5c5, type: 3}
   enemyPrefab: {fileID: 8090787599356790668, guid: f34a833b8bf42dee5b1a6ef0d477a645, type: 3}
-  cost: 0
+  cost: 25
   attack: 0
-  health: 0
-  capacity: 0
+  health: 30
+  capacity: 100

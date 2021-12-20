@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LP.FDG.Units
+namespace Game.Units
 {
     [CreateAssetMenu(fileName = "New Unit", menuName = "New Unit/Basic")]
     public class BasicUnit : ScriptableObject
@@ -29,6 +29,7 @@ namespace LP.FDG.Units
 
         [Header("Unit Stats")]
         [Space(15)]
+        
         public int cost;
         public int attack;
         public int health;

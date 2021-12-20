@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace LP.FDG.InputManager
+namespace Game.InputManager
 {
 
     public class MultiSelect : MonoBehaviour

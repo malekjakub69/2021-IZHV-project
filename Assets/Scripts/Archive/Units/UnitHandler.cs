@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using LP.FDG.Units.Player;
+using Game.Units.Player;
 using UnityEngine;
 
-namespace LP.FDG.Units
+namespace Game.Units
 {
     public class UnitHandler : MonoBehaviour
     {
@@ -47,7 +47,7 @@ namespace LP.FDG.Units
                     var stats = GetBasicUnitStats(unitName);
                     PlayerUnit pU;
 
-                    if (type == FDG.Player.PlayerManager.instance.playerUnits)
+                    if (type == Game.Player.PlayerManager.instance.playerUnits)
                     {
                         pU = unit.GetComponent<PlayerUnit>();
                     
@@ -56,7 +56,7 @@ namespace LP.FDG.Units
                         pU.capacity = stats.capacity;
                         pU.health = pU.health;
                     }
-                    else if (type == FDG.Player.PlayerManager.instance.enemyUnits)
+                    else if (type == Game.Player.PlayerManager.instance.enemyUnits)
                     {
                         //enemy stats??
                     }

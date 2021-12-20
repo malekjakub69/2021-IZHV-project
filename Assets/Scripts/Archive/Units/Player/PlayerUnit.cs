@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace LP.FDG.Units.Player
+namespace Game.Units.Player
 {
     [RequireComponent(typeof(NavMeshAgent))]
     public class PlayerUnit : MonoBehaviour

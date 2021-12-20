@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Units.Player;
 using Unity.VisualScripting;
 using UnityEngine;
-using LP.FDG.Units.Player;
 
-namespace LP.FDG.InputManager
+namespace Game.InputManager
 {
     public class InputHandler : MonoBehaviour
     {
