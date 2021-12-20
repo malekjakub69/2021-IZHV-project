@@ -5,13 +5,14 @@ using UnityEngine;
 namespace Game.Base
 {
     [System.Serializable]
-    public abstract class Base
+    public abstract class Base :MonoBehaviour
     {
         [Header("Basic information")] 
         public float Health;
         public Transform SpawnPoint;
         public int Level;
 
+        [SerializeField]
         public List<LevelUnits> LevelUnits;
     }
 }

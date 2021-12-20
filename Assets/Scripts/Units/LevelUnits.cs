@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Game.Units
 {
@@ -7,6 +8,7 @@ namespace Game.Units
     {
         public int Level;
         
+        [SerializeField]
         public List<Unit> AvailableUnits;
     }
 }

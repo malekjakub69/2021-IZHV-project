@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.Units
 {
     [System.Serializable]
-    public abstract class Unit
+    public class Unit : MonoBehaviour
     {
         [Header("Basic Information")]
         
@@ -25,11 +25,6 @@ namespace Game.Units
         public float Health;
         
         
-        
-        public void Attack()
-        {
-            
-        }
 
     }
 }
