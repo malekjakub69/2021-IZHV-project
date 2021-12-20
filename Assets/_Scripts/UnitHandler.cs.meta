@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fe2f0bfced8f32db798d371330e7892e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - dealer: {fileID: 11400000, guid: 083ad33d73dce83dda800e0747861117, type: 2}
+  - farmer: {fileID: 11400000, guid: cebb47a257113298194c337879911c31, type: 2}
+  - warrior: {fileID: 11400000, guid: 8008f520551696cd39f7f4b91354233a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
