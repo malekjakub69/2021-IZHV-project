@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3323632}
   - component: {fileID: 2331138}
   m_Layer: 0
-  m_Name: unit_Quad_A
+  m_Name: tank2_lvl_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 3304048}
   - component: {fileID: 2311328}
   m_Layer: 0
-  m_Name: unit_Harvester_A
+  m_Name: special_lvl_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
