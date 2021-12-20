@@ -24,8 +24,11 @@ namespace Game.Units
         public float AttackRange;
         
         public float Health;
+
+        [Header("Rewards")]
         
-        
+        public float RewardExp;
+        public float RewardMoney;
 
     }
 }
