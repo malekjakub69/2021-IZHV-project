@@ -19,12 +19,12 @@ namespace Game
             if (isPaused)
             {
                 Time.timeScale = 0f;
-                currentImage.sprite = pauseImage;
+                currentImage.sprite = resumeImage;
             }
             else
             {
                 Time.timeScale = 1f;
-                currentImage.sprite = resumeImage;
+                currentImage.sprite = pauseImage;
             }
         }
     }
