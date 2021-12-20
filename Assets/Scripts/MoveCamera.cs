@@ -30,7 +30,8 @@ namespace Game
 
         public void MovePlayer()
         {
-            transform.position = new Vector3(transform.position.x + XValue * MoveSpeed*Time.fixedDeltaTime, 0, 0);
+            float XPosition = Mathf.Clamp(transform.position.x + XValue * MoveSpeed * Time.fixedDeltaTime, -80, 80);
+            transform.position = new Vector3(XPosition, 0, 0);
         }
 
         void ChangeDirectionValue(float value)
