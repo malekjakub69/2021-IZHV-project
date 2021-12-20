@@ -18,6 +18,7 @@ namespace Game.Units
         
         public float MovementSpeed;
 
+
         public float AttackDamage;
         public float AttackSpeed;
         public float AttackRange;
