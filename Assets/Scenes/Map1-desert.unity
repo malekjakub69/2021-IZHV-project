@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43667555, g: 0.4842717, b: 0.56452394, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202de76922344fbe860e862afa02ce4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinsPerSeconds: 0
+  MoneyPerSeconds: 0
   Money: 0
   Exp: 0
 --- !u!114 &19829122 stripped
@@ -4944,7 +4944,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8682635, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14896,7 +14896,6 @@ MonoBehaviour:
   - Level: 1
     AvailableUnits:
     - {fileID: 7983041262702332478, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
-  SpawningPosition: {fileID: 3772912855231231340}
   LevelUpCost: 5000
 --- !u!114 &3772912855234021374
 MonoBehaviour:
@@ -14910,7 +14909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202de76922344fbe860e862afa02ce4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinsPerSeconds: 1
+  MoneyPerSeconds: 0
   Money: 1000
   Exp: 13
 --- !u!33 &3772912855234031376

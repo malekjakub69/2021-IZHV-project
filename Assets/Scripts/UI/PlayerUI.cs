@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,15 +8,27 @@ namespace Game.UI
 {
     public class PlayerUI : MonoBehaviour
     {
-        [SerializeField] private TMPro.TMP_Text MoneyText;
-        [SerializeField] private List<Button> unitButtons;
-        
-        private Stats.Stats playerStats;
+        [SerializeField] private TMP_Text MoneyText;
+        [SerializeField] private TMP_Text ExpText;
 
-        public void UpdateMoney()
+        [SerializeField]  private Stats.Stats playerStats;
+
+
+        private void UpdateMoney()
         {
             MoneyText.text = playerStats.Money.ToString();
         }
-        
+
+        private void UpdateExp()
+        {
+            ExpText.text = playerStats.Exp.ToString();
+        }
+
+        private void FixedUpdate()
+        {
+            UpdateMoney();
+            UpdateExp();
+        }
+
     }
 }
