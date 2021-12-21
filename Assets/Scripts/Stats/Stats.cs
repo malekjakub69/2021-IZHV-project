@@ -1,12 +1,23 @@
 using UnityEngine;
-
+using System.Collections;
 namespace Game.Stats
 {
     public class Stats : MonoBehaviour
     {
-        public float CoinsPerSeconds;
+        public float MoneyPerSeconds;
         public float Money;
         public float Exp;
 
+        private void Awake()
+        {
+            StartCoroutine(GetMoney());
+        }
+
+        IEnumerator GetMoney()
+        {
+            yield return new WaitForSeconds(1f);
+            Money += MoneyPerSeconds;
+            StartCoroutine(GetMoney());
+        }
     }
 }
