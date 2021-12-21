@@ -11,22 +11,18 @@ namespace Game.Units
         
         public string Name;
         public string Description;
-
+        public Sprite Image;
         public int Price;
 
         [Header("Stats")] 
         
         public float MovementSpeed;
-
-
         public float AttackDamage;
         public float AttackSpeed;
         public float AttackRange;
-        
         public float Health;
 
         [Header("Rewards")]
-        
         public float RewardExp;
         public float RewardMoney;
 

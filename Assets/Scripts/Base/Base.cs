@@ -7,10 +7,9 @@ namespace Game.Base
     [System.Serializable]
     public abstract class Base :MonoBehaviour
     {
-        [Header("Basic information")] 
-        public float Health;
-        public Transform SpawnPoint;
-        public int Level;
+        public float Health = 1000f;
+        public List<Transform> SpawnPoints;
+        public int Level = 1;
 
         [SerializeField]
         public List<LevelUnits> LevelUnits;

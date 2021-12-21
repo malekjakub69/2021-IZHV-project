@@ -9,6 +9,6 @@ namespace Game.Units
         public int Level;
         
         [SerializeField]
-        public List<Unit> AvailableUnits;
+        public List<GameObject> AvailableUnits;
     }
 }
