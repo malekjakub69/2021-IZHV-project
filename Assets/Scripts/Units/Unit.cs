@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 namespace Game.Units
 {
+    [RequireComponent(typeof(NavMeshAgent))]
     public class Unit : MonoBehaviour
     {
         [Header("Basic Information")]
@@ -13,7 +14,7 @@ namespace Game.Units
         public string Description;
         public Sprite Image;
         public int Price;
-
+        public float BuildingTime = 1f;
         [Header("Stats")] 
         
         public float MovementSpeed;
@@ -36,19 +37,13 @@ namespace Game.Units
 
         [Header("Enemy Tags")]
         public string enemyTag;
-        public string enemyBaseTag;
 
         [Header("Additional range to lose target")]
         public float RotationSpeed;
 
-        [Header("List of mesh renderers to change")]
-        public List<MeshRenderer> Materials;
-        [Header("Desired Material")]
-        public Material Material;
-
         [HideInInspector]
         public NavMeshAgent agent;
-        public GameObject enemyBase;
+        public Transform enemyBase;
         public GameObject targetedEnemy;
         public Vector3 target;
         public float attackTimer;
@@ -58,24 +53,29 @@ namespace Game.Units
         private void Start()
         {
             agent = this.GetComponent<NavMeshAgent>();
-            enemyBase = GameObject.FindGameObjectWithTag(enemyBaseTag);
             target = enemyBase.transform.position;
             targetedEnemy = null;
             fighting = false;
             lossRange = AttackRange + LossRange;
             attackTimer = AttackSpeed;
             agent.speed = MovementSpeed;
-            ChangeRendererColor();
         }
 
         protected virtual void Update()
         {
+            if (targetedEnemy == null)
+            {
+                target = enemyBase.transform.position;
+                //RandomAttackBasePoint(enemyBase.transform.position, BaseRadius);
+            }
+
             if (Health <= 0)
                 Die();
 
             ScanForEnemies();
             float distance = Vector3.Distance(this.transform.position, target);
-            if (distance < AttackRange || fighting)
+
+            if (distance < AttackRange && LineOfSight(targetedEnemy))
             {
                 fighting = true;
                 if (targetedEnemy)
@@ -87,20 +87,6 @@ namespace Game.Units
             {
                 fighting = false;
                 Move();
-            }               
-        }
-
-        private void ChangeRendererColor()
-        {
-            if (Materials != null && Materials.Count != 0)
-            {
-                foreach (MeshRenderer meshRenderer in Materials)
-                {
-                    for (int i = 0; i < meshRenderer.materials.Length; i++)
-                    {
-                        meshRenderer.materials[i] = Material;
-                    }
-                }
             }
         }
 
@@ -115,6 +101,31 @@ namespace Game.Units
                     target = targetedEnemy.transform.position;
                 }
             }
+        }
+
+        private Vector3 RandomAttackBasePoint(Vector3 basePosition, float radius)
+        {
+            NavMeshHit hit;
+            var vector2 = Random.insideUnitCircle.normalized * radius;
+            Vector3 edgePosition = new Vector3(vector2.x, 0, vector2.y);
+            NavMesh.SamplePosition(basePosition + edgePosition, out hit, 1, LayerMask.GetMask("Default"));
+
+            return hit.position;
+        }
+
+        private bool LineOfSight(GameObject enemy)
+        {
+            if (targetedEnemy == null)
+                return true;
+
+            RaycastHit hit;
+            if (Physics.Raycast(this.transform.position, enemy.transform.position - this.transform.position, out hit, Mathf.Infinity, LayerMask.GetMask("Default")))
+            {
+                if (hit.collider.gameObject == enemy)
+                    return true;
+            }
+
+            return false;
         }
 
         protected virtual void AttackBase()
