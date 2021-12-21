@@ -14,7 +14,10 @@ namespace Game.Units
         protected override void Move()
         {
             if (agent.isOnNavMesh)
+            {
+                agent.isStopped = false;
                 agent.SetDestination(target);
+            }
         }
 
         protected override void Fight()
@@ -67,21 +70,8 @@ namespace Game.Units
             }
             else
             {
-                if (targetedEnemy == null)
-                {
-                    target = enemyBase.transform.position;
-                    fighting = false;
-                    agent.isStopped = false;
-                    return;
-                }
-
-                targetedEnemy.GetComponent<Unit>().Health -= AttackDamage;
-                if (targetedEnemy.GetComponent<Unit>().Health <= 0)
-                {
-                    target = enemyBase.transform.position;
-                    fighting = false;
-                    agent.isStopped = false;
-                }
+                if (targetedEnemy != null)
+                    targetedEnemy.GetComponent<Unit>().Health -= AttackDamage;
             }
         }
     }

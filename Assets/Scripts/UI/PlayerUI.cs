@@ -14,16 +14,8 @@ namespace Game.UI
 
         public void UpdateMoney()
         {
-            MoneyText.text = playerStats.Coins.ToString();
+            MoneyText.text = playerStats.Money.ToString();
         }
-
-
-        public void ChangeGeneratedUnits(List<GameObject> availableUnits)
-        {
-            
-        }
-
-
         
     }
 }
