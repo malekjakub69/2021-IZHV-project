@@ -51,7 +51,7 @@ namespace Game.Score
                 {
                     if (i >= uiElements.Count)
                     {
-                        var inst = Instantiate(highScoreUIElementPrefab, Vector3.zero, Quaternion.identity, elementWrapper);                       
+                        var inst = Instantiate(highScoreUIElementPrefab, elementWrapper);                       
                         uiElements.Add(inst);
                     }
 
