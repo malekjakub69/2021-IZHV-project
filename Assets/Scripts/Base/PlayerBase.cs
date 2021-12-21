@@ -14,7 +14,7 @@ namespace Game.Base
         Transform SpawningPosition;
 
         public float LevelUpCost = 5000;
-        private Transform EnemyBasePosition;
+        private GameObject EnemyBasePosition;
         private Stats.Stats playerStats;
         private PlayerUI playerUI;
         List<GameObject> units;
@@ -23,7 +23,7 @@ namespace Game.Base
 
         private void Awake()
         {
-            EnemyBasePosition = FindObjectOfType<EnemyBase>().transform;
+            EnemyBasePosition = FindObjectOfType<EnemyBase>().gameObject;
             playerUI = FindObjectOfType<PlayerUI>();
             playerStats = GetComponent<Stats.Stats>();
             units = LevelUnits.Find(unit => unit.Level == Level).AvailableUnits;
