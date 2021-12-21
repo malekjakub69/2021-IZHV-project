@@ -497,8 +497,12 @@ PrefabInstance:
       value: env_Desert_Cliff_D
       objectReference: {fileID: 0}
     - target: {fileID: 166158, guid: 3c176cc847d5e7041b6f8077278e9e81, type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166158, guid: 3c176cc847d5e7041b6f8077278e9e81, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 419474, guid: 3c176cc847d5e7041b6f8077278e9e81, type: 3}
       propertyPath: m_RootOrder
@@ -506,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 419474, guid: 3c176cc847d5e7041b6f8077278e9e81, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -65
+      value: -64.9
       objectReference: {fileID: 0}
     - target: {fileID: 419474, guid: 3c176cc847d5e7041b6f8077278e9e81, type: 3}
       propertyPath: m_LocalPosition.y
@@ -542,6 +546,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 419474, guid: 3c176cc847d5e7041b6f8077278e9e81, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297474375819047734, guid: 3c176cc847d5e7041b6f8077278e9e81, type: 3}
+      propertyPath: m_Carve
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1088,7 +1096,6 @@ Transform:
   m_Children:
   - {fileID: 3772912855231231340}
   - {fileID: 1073760847}
-  - {fileID: 1461621793}
   m_Father: {fileID: 1862003567}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1385,6 +1392,14 @@ PrefabInstance:
     - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
       propertyPath: m_Name
       value: env_Desert_Rock_Large_C (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 456778, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
       propertyPath: m_RootOrder
@@ -1858,6 +1873,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: env_Desert_Rock_Large_C (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 456778, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2127,21 +2150,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: env_Desert_Cliff_Base_A
       objectReference: {fileID: 0}
+    - target: {fileID: 150476, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 150476, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 405630, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 405630, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 405630, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 405630, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 405630, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2877,7 +2896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512343814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -134, y: 0.5, z: 0}
+  m_LocalPosition: {x: -134, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4583,6 +4602,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock02_m (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1471897887361602, guid: 8f281d16e094c6a4896e37696e49dea9, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793151680460980, guid: 8f281d16e094c6a4896e37696e49dea9, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4909627193785698, guid: 8f281d16e094c6a4896e37696e49dea9, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5221,6 +5248,14 @@ PrefabInstance:
     - target: {fileID: 150476, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
       propertyPath: m_Name
       value: env_Desert_Cliff_Base_A (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 150476, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 150476, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 405630, guid: d1f328a3532b9ea4289e159084896b32, type: 3}
       propertyPath: m_RootOrder
@@ -7285,6 +7320,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock02_m
       objectReference: {fileID: 0}
+    - target: {fileID: 1471897887361602, guid: 8f281d16e094c6a4896e37696e49dea9, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793151680460980, guid: 8f281d16e094c6a4896e37696e49dea9, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4909627193785698, guid: 8f281d16e094c6a4896e37696e49dea9, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -8961,37 +9004,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 411700, guid: 2767198676811e242a6ee48f3f83359d, type: 3}
   m_PrefabInstance: {fileID: 1441934771}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1461621792
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1461621793}
-  m_Layer: 0
-  m_Name: PlayerUnits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1461621793
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461621792}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.6, y: 1.84, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 164950708}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1471671066
 GameObject:
   m_ObjectHideFlags: 0
@@ -9115,6 +9127,14 @@ PrefabInstance:
     - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
       propertyPath: m_Name
       value: env_Desert_Rock_Large_C (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 456778, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
       propertyPath: m_RootOrder
@@ -9527,7 +9547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538698045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -134, y: 0.5, z: -5}
+  m_LocalPosition: {x: -134, y: 0, z: -10.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11129,7 +11149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818316816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -134, y: 0.5, z: 5}
+  m_LocalPosition: {x: -134, y: 0, z: 15.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11387,6 +11407,14 @@ PrefabInstance:
     - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
       propertyPath: m_Name
       value: env_Desert_Rock_Large_C (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181126, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 456778, guid: 77b60a204e9c6574ba42fa72caa7c39e, type: 3}
       propertyPath: m_RootOrder
@@ -12470,6 +12498,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 452156784861901247, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
+      propertyPath: m_BaseOffset
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 452156784861901247, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
     - target: {fileID: 769407797124644677, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12488,19 +12524,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 769407797124644677, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 769407797124644677, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 769407797124644677, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 769407797124644677, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 769407797124644677, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12508,12 +12544,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 769407797124644677, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 769407797124644677, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4361147093883526723, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
+      propertyPath: enemyBase
+      value: 
+      objectReference: {fileID: 15392373}
     - target: {fileID: 7983041262702332478, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
       propertyPath: m_Name
       value: Tank
@@ -13659,7 +13699,6 @@ MonoBehaviour:
   - Level: 1
     AvailableUnits:
     - {fileID: 7983041262702332478, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
-  SpawningPosition: {fileID: 0}
   LevelUpCost: 5000
 --- !u!114 &3772912855234021374
 MonoBehaviour:

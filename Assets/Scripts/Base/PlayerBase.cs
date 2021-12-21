@@ -8,9 +8,10 @@ using UnityEngine.AI;
 
 namespace Game.Base
 {
+    [RequireComponent(typeof(Stats.Stats))]
     public class PlayerBase: Base
     {
-        [SerializeField] Transform SpawningPosition;
+        Transform SpawningPosition;
 
         public float LevelUpCost = 5000;
         private Transform EnemyBasePosition;
@@ -65,12 +66,14 @@ namespace Game.Base
             GameObject unitToSpawn = buildingUnitQueue.Peek();
             Unit unit = unitToSpawn.GetComponent<Unit>();
             unit.enemyBase = EnemyBasePosition;
+
             yield return new WaitForSeconds(unit.BuildingTime);
+
             buildingUnitQueue.Dequeue();
             int indexOfSpawnPoint = Random.Range(0, SpawnPoints.Count);
             Transform position = SpawnPoints[indexOfSpawnPoint];
             Quaternion rotation = unitToSpawn.transform.rotation;
-            var gameObject = Instantiate(unitToSpawn, position.position, rotation, SpawningPosition);
+            var gameObject = Instantiate(unitToSpawn, position.position, rotation);
             if (buildingUnitQueue.Count >= 1) {
                 StartCoroutine(WaitBuildingTimeAndGenerateUnit());
             }
