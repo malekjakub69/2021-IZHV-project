@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Game.Score
 {
     public class ScoreUI : MonoBehaviour
     {
-        [SerializeField] private GameObject panel;
+        [SerializeField] private GameObject statsPanel;
         [SerializeField] private GameObject highScoreUIElementPrefab;
         [SerializeField] private Transform elementWrapper;
 
@@ -27,17 +28,17 @@ namespace Game.Score
 
         public void Start()
         {
-            panel.SetActive(false);
+            statsPanel.SetActive(false);
         }
 
         public void ShowPanel()
         {
-            panel.SetActive(true);
+            statsPanel.SetActive(true);
         }
 
         public void ClosePanel()
         {
-            panel.SetActive(false);
+            statsPanel.SetActive(false);
         }
 
         private void UpdateUI(List<HighScoreElement> list)

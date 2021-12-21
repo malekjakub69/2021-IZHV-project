@@ -43,6 +43,7 @@ namespace Game
             //save score to JSON
             //reset game score and money
             
+            Time.timeScale = 0f;
             SceneManager.LoadScene(0);
         }
     }
