@@ -3194,7 +3194,6 @@ MonoBehaviour:
   - Level: 1
     AvailableUnits:
     - {fileID: 7983041262702332478, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
-  SpawningPosition: {fileID: 394221334}
   LevelUpCost: 5000
 --- !u!23 &394221336
 MeshRenderer:
@@ -3259,7 +3258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinsPerSeconds: 0
-  Money: 0
+  Money: 1000
   Exp: 0
 --- !u!1001 &409070037
 PrefabInstance:
@@ -16691,9 +16690,9 @@ Transform:
   m_Children:
   - {fileID: 2084361159}
   - {fileID: 705507995}
-  - {fileID: 1248660146}
   - {fileID: 1159846515}
   - {fileID: 991823248}
+  - {fileID: 1248660146}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
