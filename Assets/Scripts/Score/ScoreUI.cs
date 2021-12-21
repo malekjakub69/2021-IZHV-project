@@ -50,14 +50,12 @@ namespace Game.Score
                 {
                     if (i >= uiElements.Count)
                     {
-                        var inst = Instantiate(highScoreUIElementPrefab, Vector3.zero, Quaternion.identity);
-                        inst.transform.SetParent(elementWrapper, false);
-                        
+                        var inst = Instantiate(highScoreUIElementPrefab, Vector3.zero, Quaternion.identity, elementWrapper);                       
                         uiElements.Add(inst);
                     }
 
                     //zapíše nebo přepíše name&points
-                    var text = uiElements[i].GetComponentsInChildren<TextMeshProUGUI>();
+                    var text = uiElements[i].GetComponentsInChildren<TMP_Text>();
                     text[0].text = el.Name;
                     text[1].text = el.Points.ToString();
                 }
