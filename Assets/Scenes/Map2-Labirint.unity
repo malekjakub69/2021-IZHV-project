@@ -3212,6 +3212,7 @@ MonoBehaviour:
   - {fileID: 1550709625}
   - {fileID: 126069987}
   BaseLevel: 1
+  BaseColor: {fileID: 2100000, guid: d697aa8eca9a6074e932a13fe7d7f5c1, type: 2}
   LevelUpCost: 5000
   LevelUnits:
   - BaseLevel: 1
@@ -11190,6 +11191,7 @@ MonoBehaviour:
   - {fileID: 575382731}
   - {fileID: 1938282014}
   BaseLevel: 1
+  BaseColor: {fileID: 2100000, guid: 21583e009529de2498db37e0c7b79bfe, type: 2}
   LevelUpCost: 5000
   LevelUnits:
   - BaseLevel: 1
