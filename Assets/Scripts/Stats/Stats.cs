@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 namespace Game.Stats
 {
+        //třída urdžující staty pro hráče
     public class Stats : MonoBehaviour
     {
         public float MoneyPerSeconds;
@@ -13,6 +14,7 @@ namespace Game.Stats
             StartCoroutine(GetMoney());
         }
 
+        //Inkrement penež každou sekundu
         IEnumerator GetMoney()
         {
             yield return new WaitForSeconds(1f);

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace Game
 {
+    //třída mainmenu
     public class MainMenu: MonoBehaviour
     {
 

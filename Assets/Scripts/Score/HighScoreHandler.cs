@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Game.Score
 {
+    //Třída zajíštuje statistiky v main menu
     public class HighScoreHandler: MonoBehaviour
     {
         private List<HighScoreElement> HighScoreList = new List<HighScoreElement>();

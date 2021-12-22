@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 namespace Game.Units
 {
+    //třída ze které dědí (budou dědit) různe jednotky 
     [RequireComponent(typeof(NavMeshAgent))]
     public class Unit : MonoBehaviour
     {

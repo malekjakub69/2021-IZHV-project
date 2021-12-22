@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Game
 {
+    //třída pro pohyb kamery
     public class MoveCamera : MonoBehaviour
     {
         [SerializeField]

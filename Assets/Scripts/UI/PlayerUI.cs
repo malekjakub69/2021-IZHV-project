@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace Game.UI
 {
+    //Třída zapisující hodnoty do UI
     public class PlayerUI : MonoBehaviour
     {
         [SerializeField] private TMP_Text MoneyText;

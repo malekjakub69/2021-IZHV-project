@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 namespace Game
 {
+    //Třída behu hry
     public class App : MonoBehaviour
     {
         [SerializeField] private Image currentImage;

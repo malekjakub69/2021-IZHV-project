@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 namespace Game.Score
 {
+    //Třída vypisující hodnoty do UI
     public class ScoreUI : MonoBehaviour
     {
         [SerializeField] private GameObject statsPanel;

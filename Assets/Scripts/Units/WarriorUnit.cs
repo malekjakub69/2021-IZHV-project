@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Game.Units
 {
+    //Třída jednotky warrior, která dědí z Unit
     public class WarriorUnit : Unit
     {
         protected override void Update()
