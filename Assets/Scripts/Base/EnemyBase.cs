@@ -8,13 +8,12 @@ namespace Game.Base
     [RequireComponent(typeof(Stats.Stats))]
     public class EnemyBase: Base
     {
-        [SerializeField]
         private int NextSpawnIndex = -1;
 
 
         private void Awake()
         {
-            OpponentBasePosition = FindObjectOfType<PlayerBase>().gameObject;
+            EnemyBasePosition = FindObjectOfType<PlayerBase>().transform;
             playerStats = GetComponent<Stats.Stats>();
             units = LevelUnits.Find(unit => unit.BaseLevel == BaseLevel).AvailableUnits;
         }

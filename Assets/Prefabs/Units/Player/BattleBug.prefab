@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4930759121127226485}
   m_Layer: 0
   m_Name: BattleBug
-  m_TagString: Untagged
+  m_TagString: PlayerUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,12 +82,8 @@ MonoBehaviour:
   RewardMoney: 10
   Radius: 10
   LossRange: 2
-  enemyTag: 
-  enemyBaseTag: 
+  enemyTag: EnemyUnit
   RotationSpeed: 0
-  Materials:
-  - {fileID: 0}
-  Material: {fileID: 0}
   agent: {fileID: 0}
   enemyBase: {fileID: 0}
   targetedEnemy: {fileID: 0}
@@ -191,7 +187,7 @@ GameObject:
   - component: {fileID: 6859154525089361227}
   m_Layer: 0
   m_Name: BattleBug
-  m_TagString: Untagged
+  m_TagString: PlayerUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,6 +10,8 @@ namespace Game.Base
     public abstract class Base :MonoBehaviour
     {
         [SerializeField] 
+        Transform SpawningPosition;
+        [SerializeField] 
         public float Health = 1000f;
         [SerializeField] 
         public List<Transform> SpawnPoints;
@@ -20,7 +22,7 @@ namespace Game.Base
         protected List<GameObject> units;
         
         public float LevelUpCost = 5000;
-        protected GameObject OpponentBasePosition;
+        protected Transform EnemyBasePosition;
         protected PlayerUI playerUI;
 
         Queue<GameObject> buildingUnitQueue = new Queue<GameObject>();
@@ -58,24 +60,22 @@ namespace Game.Base
             GameObject unitToGenerate = units[indexOfUnit];
             GenerateUnit(unitToGenerate);
         }
-        
+
         IEnumerator WaitBuildingTimeAndGenerateUnit()
         {
             GameObject unitToSpawn = buildingUnitQueue.Peek();
             Unit unit = unitToSpawn.GetComponent<Unit>();
-            unit.enemyBase = OpponentBasePosition;
-
+            unit.enemyBase = EnemyBasePosition;
             yield return new WaitForSeconds(unit.BuildingTime);
-
             buildingUnitQueue.Dequeue();
             int indexOfSpawnPoint = Random.Range(0, SpawnPoints.Count);
             Transform position = SpawnPoints[indexOfSpawnPoint];
             Quaternion rotation = unitToSpawn.transform.rotation;
-            var gameObject = Instantiate(unitToSpawn, position.position, rotation);
+            var spawnObject = Instantiate(unitToSpawn, position.position, rotation, SpawningPosition);
             if (buildingUnitQueue.Count >= 1) {
                 StartCoroutine(WaitBuildingTimeAndGenerateUnit());
             }
-            gameObject.GetComponent<Unit>().enemyBase = OpponentBasePosition;
+            spawnObject.GetComponent<Unit>().enemyBase = EnemyBasePosition;
         }
     }
 }

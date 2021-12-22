@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1935048937641869230}
   m_Layer: 0
   m_Name: BattleCar
-  m_TagString: Untagged
+  m_TagString: PlayerUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 7442345369143079764}
   m_Layer: 0
   m_Name: BattleCar
-  m_TagString: EnemyUnit
+  m_TagString: PlayerUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,11 +501,8 @@ MonoBehaviour:
   RewardMoney: 10
   Radius: 10
   LossRange: 2
-  enemyTag: PlayerUnit
-  enemyBaseTag: PlayerBase
+  enemyTag: EnemyUnit
   RotationSpeed: 0
-  Materials: []
-  Material: {fileID: 2100000, guid: 21583e009529de2498db37e0c7b79bfe, type: 2}
   agent: {fileID: 0}
   enemyBase: {fileID: 0}
   targetedEnemy: {fileID: 0}

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1994436488}
   m_Layer: 0
   m_Name: tank_lvl_2(Clone)
-  m_TagString: Untagged
+  m_TagString: PlayerUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -366,10 +366,7 @@ MonoBehaviour:
   Radius: 10
   LossRange: 2
   enemyTag: EnemyUnit
-  enemyBaseTag: EnemyBase
   RotationSpeed: 5
-  Materials: []
-  Material: {fileID: 2100000, guid: d697aa8eca9a6074e932a13fe7d7f5c1, type: 2}
   agent: {fileID: 0}
   enemyBase: {fileID: 0}
   targetedEnemy: {fileID: 0}

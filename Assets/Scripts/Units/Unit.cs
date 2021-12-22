@@ -16,7 +16,6 @@ namespace Game.Units
         public Sprite Image;
         public int Price;
         public float BuildingTime = 1f;
-        
         [Header("Stats")] 
         
         public float MovementSpeed;
@@ -25,13 +24,11 @@ namespace Game.Units
         public float AttackDamage;
         public float AttackSpeed;
         public float AttackRange;
-        
         public float Health;
 
         [Header("Rewards")]
         public float RewardExp;
         public float RewardMoney;
-        
         [Header("Collision Radius")]
         public float Radius;
 
@@ -41,19 +38,14 @@ namespace Game.Units
 
         [Header("Enemy Tags")]
         public string enemyTag;
-        public string enemyBaseTag;
 
-        [Header("Additional range to lose target")]
+        [Header("Actually state of tanks")]
         public float RotationSpeed;
-
-        [Header("List of mesh renderers to change")]
-        public List<MeshRenderer> Materials;
-        [Header("Desired Material")]
-        public Material Material;
 
         [HideInInspector]
         public NavMeshAgent agent;
-        public GameObject enemyBase;
+        [HideInInspector]
+        public Transform enemyBase;
         public GameObject targetedEnemy;
         public Vector3 target;
         public float attackTimer;
@@ -63,24 +55,29 @@ namespace Game.Units
         private void Start()
         {
             agent = this.GetComponent<NavMeshAgent>();
-            enemyBase = GameObject.FindGameObjectWithTag(enemyBaseTag);
             target = enemyBase.transform.position;
             targetedEnemy = null;
             fighting = false;
             lossRange = AttackRange + LossRange;
             attackTimer = AttackSpeed;
             agent.speed = MovementSpeed;
-            ChangeRendererColor();
         }
 
         protected virtual void Update()
         {
+            if (targetedEnemy == null)
+            {
+                target = enemyBase.transform.position;
+                //RandomAttackBasePoint(enemyBase.transform.position, BaseRadius);
+            }
+
             if (Health <= 0)
                 Die();
 
             ScanForEnemies();
             float distance = Vector3.Distance(this.transform.position, target);
-            if (distance < AttackRange || fighting)
+
+            if (distance < AttackRange && LineOfSight(targetedEnemy))
             {
                 fighting = true;
                 if (targetedEnemy)
@@ -92,34 +89,63 @@ namespace Game.Units
             {
                 fighting = false;
                 Move();
-            }               
-        }
-
-        private void ChangeRendererColor()
-        {
-            if (Materials != null && Materials.Count != 0)
-            {
-                foreach (MeshRenderer meshRenderer in Materials)
-                {
-                    for (int i = 0; i < meshRenderer.materials.Length; i++)
-                    {
-                        meshRenderer.materials[i] = Material;
-                    }
-                }
             }
         }
 
         private void ScanForEnemies()
         {
-            Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, Radius);
-            foreach (var hitCollider in hitColliders)
+            var ray = new Ray(this.transform.position, this.transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, Radius))
             {
-                if (hitCollider.tag == enemyTag)
+                Debug.Log($"hit: {hit.transform.gameObject.tag}");
+                Debug.Log($"enemyTag : {enemyTag}");
+                if (hit.transform.gameObject.tag == enemyTag)
                 {
-                    targetedEnemy = hitCollider.gameObject;
-                    target = targetedEnemy.transform.position;
+                    targetedEnemy = hit.transform.gameObject;
+                    target = hit.transform.position;
                 }
             }
+            else
+            {
+                targetedEnemy = null;
+            }
+
+
+            //Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, Radius);
+            //foreach (var hitCollider in hitColliders)
+            //{
+            //    if (hitCollider.tag == enemyTag)
+            //    {
+            //        targetedEnemy = hitCollider.gameObject;
+            //        target = targetedEnemy.transform.position;
+            //    }
+            //}
+        }
+
+        private Vector3 RandomAttackBasePoint(Vector3 basePosition, float radius)
+        {
+            NavMeshHit hit;
+            var vector2 = Random.insideUnitCircle.normalized * radius;
+            Vector3 edgePosition = new Vector3(vector2.x, 0, vector2.y);
+            NavMesh.SamplePosition(basePosition + edgePosition, out hit, 1, LayerMask.GetMask("Default"));
+
+            return hit.position;
+        }
+
+        private bool LineOfSight(GameObject enemy)
+        {
+            if (targetedEnemy == null)
+                return true;
+
+            RaycastHit hit;
+            if (Physics.Raycast(this.transform.position, enemy.transform.position - this.transform.position, out hit, Mathf.Infinity, LayerMask.GetMask("Default")))
+            {
+                if (hit.collider.gameObject == enemy)
+                    return true;
+            }
+
+            return false;
         }
 
         protected virtual void AttackBase()

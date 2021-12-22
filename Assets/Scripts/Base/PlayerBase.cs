@@ -12,7 +12,7 @@ namespace Game.Base
     {
         private void Awake()
         {
-            OpponentBasePosition = FindObjectOfType<EnemyBase>().gameObject;
+            EnemyBasePosition = FindObjectOfType<EnemyBase>().transform;
             playerStats = GetComponent<Stats.Stats>();
             units = LevelUnits.Find(unit => unit.BaseLevel == BaseLevel).AvailableUnits;
             playerUI = FindObjectOfType<PlayerUI>();
