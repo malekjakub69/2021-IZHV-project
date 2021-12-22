@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 7442345369143079764}
   m_Layer: 0
   m_Name: BattleCar
-  m_TagString: Untagged
+  m_TagString: EnemyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -463,7 +463,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -501,11 +501,11 @@ MonoBehaviour:
   RewardMoney: 10
   Radius: 10
   LossRange: 2
-  enemyTag: Enemy
-  enemyBaseTag: EnemyBase
+  enemyTag: PlayerUnit
+  enemyBaseTag: PlayerBase
   RotationSpeed: 0
   Materials: []
-  Material: {fileID: 0}
+  Material: {fileID: 2100000, guid: 21583e009529de2498db37e0c7b79bfe, type: 2}
   agent: {fileID: 0}
   enemyBase: {fileID: 0}
   targetedEnemy: {fileID: 0}

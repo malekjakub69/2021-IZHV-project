@@ -5,6 +5,8 @@ namespace Game.Stats
         //třída urdžující staty pro hráče
     public class Stats : MonoBehaviour
     {
+        public Opponent Opponent;
+        
         public float MoneyPerSeconds;
         public float Money;
         public float Exp;
@@ -21,5 +23,11 @@ namespace Game.Stats
             Money += MoneyPerSeconds;
             StartCoroutine(GetMoney());
         }
+    }
+
+    public enum Opponent
+    {
+        Player,
+        Computer
     }
 }

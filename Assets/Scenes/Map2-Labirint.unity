@@ -3173,7 +3173,7 @@ GameObject:
   - component: {fileID: 394221338}
   m_Layer: 0
   m_Name: PlayerBase
-  m_TagString: Untagged
+  m_TagString: PlayerBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3211,17 +3211,17 @@ MonoBehaviour:
   - {fileID: 530784803}
   - {fileID: 1550709625}
   - {fileID: 126069987}
-  Level: 1
+  BaseLevel: 1
+  LevelUpCost: 5000
   LevelUnits:
-  - Level: 1
+  - BaseLevel: 1
     AvailableUnits:
     - {fileID: 7983041262702332478, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
     - {fileID: 8832867973360531291, guid: 1f29e4c74252653a4b1edbfd76bc8e1d, type: 3}
-  - Level: 1
+  - BaseLevel: 2
     AvailableUnits:
     - {fileID: 4895249760557191681, guid: b436722014b335fc6b8a111ddf9cceff, type: 3}
     - {fileID: 6425152462949645365, guid: 3bd49f8ac7ceb2749ac73e3c4258b9da, type: 3}
-  LevelUpCost: 5000
 --- !u!23 &394221336
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3284,8 +3284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202de76922344fbe860e862afa02ce4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoneyPerSeconds: 0
-  Money: 1000
+  Opponent: 0
+  MoneyPerSeconds: 10
+  Money: 500
   Exp: 0
 --- !u!1001 &409070037
 PrefabInstance:
@@ -4519,7 +4520,7 @@ Transform:
   m_GameObject: {fileID: 575382730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 34, y: 0.5, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 39863194}
@@ -11147,6 +11148,7 @@ GameObject:
   - component: {fileID: 1303496596}
   - component: {fileID: 1303496595}
   - component: {fileID: 1303496594}
+  - component: {fileID: 1303496597}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: EnemyBase
@@ -11182,11 +11184,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a805cbed6046ceaec091a3a74c6482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  SpawnPoints: []
-  Level: 0
-  LevelUnits: []
-  EnemyBasePosition: {fileID: 0}
+  Health: 1000
+  SpawnPoints:
+  - {fileID: 1757484678}
+  - {fileID: 575382731}
+  - {fileID: 1938282014}
+  BaseLevel: 1
+  LevelUpCost: 5000
+  LevelUnits:
+  - BaseLevel: 1
+    AvailableUnits:
+    - {fileID: 7983041262702332478, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
+    - {fileID: 8832867973360531291, guid: 1f29e4c74252653a4b1edbfd76bc8e1d, type: 3}
+  - BaseLevel: 2
+    AvailableUnits:
+    - {fileID: 4895249760557191681, guid: b436722014b335fc6b8a111ddf9cceff, type: 3}
+    - {fileID: 6425152462949645365, guid: 3bd49f8ac7ceb2749ac73e3c4258b9da, type: 3}
+  NextSpawnIndex: -1
 --- !u!23 &1303496595
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11237,6 +11251,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303496592}
   m_Mesh: {fileID: 4300000, guid: f3e0d64d458a73b49a504948f41a2128, type: 3}
+--- !u!114 &1303496597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303496592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202de76922344fbe860e862afa02ce4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Opponent: 1
+  MoneyPerSeconds: 10
+  Money: 500
+  Exp: 0
 --- !u!1001 &1304944339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15845,7 +15875,7 @@ Transform:
   m_GameObject: {fileID: 1757484677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 34, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 39863194}
@@ -17324,7 +17354,7 @@ Transform:
   m_GameObject: {fileID: 1938282013}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 34, y: 0.5, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 39863194}
@@ -18385,6 +18415,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7266410958764241259, guid: 184fb788e7a69fa9586e946f769e38f9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.19262695
+      objectReference: {fileID: 0}
     - target: {fileID: 7266410958764241259, guid: 184fb788e7a69fa9586e946f769e38f9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0

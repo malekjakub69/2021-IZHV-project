@@ -10,6 +10,12 @@ namespace Game.Base
 {
     public class PlayerBase: Base
     {
-        
+        private void Awake()
+        {
+            OpponentBasePosition = FindObjectOfType<EnemyBase>().gameObject;
+            playerStats = GetComponent<Stats.Stats>();
+            units = LevelUnits.Find(unit => unit.BaseLevel == BaseLevel).AvailableUnits;
+            playerUI = FindObjectOfType<PlayerUI>();
+        }
     }
 }

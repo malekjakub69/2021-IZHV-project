@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Stats;
 using Game.UI;
 using Game.Units;
 using UnityEngine;
@@ -13,13 +14,14 @@ namespace Game.Base
         [SerializeField] 
         public List<Transform> SpawnPoints;
         [SerializeField] 
-        public int Level = 1;
-        private Stats.Stats playerStats;
-        private List<GameObject> units;
+        public int BaseLevel = 1;
+
+        protected Stats.Stats playerStats;
+        protected List<GameObject> units;
         
         public float LevelUpCost = 5000;
-        private GameObject EnemyBasePosition;
-        private PlayerUI playerUI;
+        protected GameObject OpponentBasePosition;
+        protected PlayerUI playerUI;
 
         Queue<GameObject> buildingUnitQueue = new Queue<GameObject>();
 
@@ -40,20 +42,13 @@ namespace Game.Base
                 }
             }
         }
-        private void Awake()
-        {
-            EnemyBasePosition = FindObjectOfType<EnemyBase>().gameObject;
-            playerUI = FindObjectOfType<PlayerUI>();
-            playerStats = GetComponent<Stats.Stats>();
-            units = LevelUnits.Find(unit => unit.BaseLevel == Level).AvailableUnits;
-        }
 
         public void LevelUp()
         {
             if (playerStats.Exp > LevelUpCost) {
                 LevelUpCost = float.MaxValue;
-                Level++;
-                units = LevelUnits.Find(unit => unit.BaseLevel == Level).AvailableUnits;
+                BaseLevel++;
+                units = LevelUnits.Find(unit => unit.BaseLevel == BaseLevel).AvailableUnits;
             }
         }
         
@@ -68,7 +63,7 @@ namespace Game.Base
         {
             GameObject unitToSpawn = buildingUnitQueue.Peek();
             Unit unit = unitToSpawn.GetComponent<Unit>();
-            unit.enemyBase = EnemyBasePosition;
+            unit.enemyBase = OpponentBasePosition;
 
             yield return new WaitForSeconds(unit.BuildingTime);
 
@@ -80,7 +75,7 @@ namespace Game.Base
             if (buildingUnitQueue.Count >= 1) {
                 StartCoroutine(WaitBuildingTimeAndGenerateUnit());
             }
-            gameObject.GetComponent<Unit>().enemyBase = EnemyBasePosition;
+            gameObject.GetComponent<Unit>().enemyBase = OpponentBasePosition;
         }
     }
 }
