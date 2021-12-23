@@ -285,11 +285,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a805cbed6046ceaec091a3a74c6482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawningPosition: {fileID: 0}
   Health: 1000
   SpawnPoints: []
-  Level: 1
+  BaseLevel: 1
+  LevelUpCost: 5000
   LevelUnits: []
-  EnemyBasePosition: {fileID: 0}
 --- !u!114 &15392377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202de76922344fbe860e862afa02ce4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Opponent: 0
   MoneyPerSeconds: 0
   Money: 0
   Exp: 0
@@ -4827,7 +4829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.9169622, y: 0.013189458, z: -0.0015021763, w: 0.39875323}
-  m_LocalPosition: {x: -1.6, y: 138.8, z: 88.1}
+  m_LocalPosition: {x: 0.2, y: 42.5, z: 57.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4944,7 +4946,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.3144476, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6441,7 +6443,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &940489230
 MonoBehaviour:
@@ -7158,7 +7160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266410959685050926, guid: 184fb788e7a69fa9586e946f769e38f9, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7266410959685050926, guid: 184fb788e7a69fa9586e946f769e38f9, type: 3}
       propertyPath: m_AnchorMax.x
@@ -12897,7 +12899,7 @@ Transform:
   - {fileID: 859942277}
   - {fileID: 1248660146}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1866171953
 GameObject:
@@ -15056,22 +15058,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa9a7813f5c4fd0a2575c6fbf7cb361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawningPosition: {fileID: 0}
   Health: 1000
   SpawnPoints:
   - {fileID: 1818316817}
   - {fileID: 512343815}
   - {fileID: 1538698046}
-  Level: 1
+  BaseLevel: 1
+  LevelUpCost: 5000
   LevelUnits:
-  - Level: 1
+  - BaseLevel: 0
     AvailableUnits:
     - {fileID: 7983041262702332478, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
     - {fileID: 8832867973360531291, guid: 1f29e4c74252653a4b1edbfd76bc8e1d, type: 3}
-  - Level: 2
+  - BaseLevel: 0
     AvailableUnits:
     - {fileID: 4895249760557191681, guid: b436722014b335fc6b8a111ddf9cceff, type: 3}
     - {fileID: 6425152462949645365, guid: 3bd49f8ac7ceb2749ac73e3c4258b9da, type: 3}
-  LevelUpCost: 5000
 --- !u!114 &3772912855234021374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15084,6 +15087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202de76922344fbe860e862afa02ce4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Opponent: 0
   MoneyPerSeconds: 0
   Money: 1000
   Exp: 13
