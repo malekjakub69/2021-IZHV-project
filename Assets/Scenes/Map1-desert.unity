@@ -285,12 +285,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a805cbed6046ceaec091a3a74c6482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawningPosition: {fileID: 0}
+  SpawningPosition: {fileID: 2065420751}
   Health: 1000
-  SpawnPoints: []
+  SpawnPoints:
+  - {fileID: 1062149638}
+  - {fileID: 1075681801}
+  - {fileID: 631392332}
   BaseLevel: 1
   LevelUpCost: 5000
-  LevelUnits: []
+  LevelUnits:
+  - BaseLevel: 1
+    AvailableUnits:
+    - {fileID: 4824131067419657812, guid: eba416120b52eae289b4363d80931750, type: 3}
+    - {fileID: 3600086770365897405, guid: e9bf19776ba1b038280a47c0f8e1ce18, type: 3}
+  - BaseLevel: 2
+    AvailableUnits:
+    - {fileID: 2983807234846196878, guid: 35a63d733a21d99b1ad6b7cc7113bbe5, type: 3}
+    - {fileID: 8419250149163971927, guid: 1132ae5be723259b6af25e347933592f, type: 3}
 --- !u!114 &15392377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,8 +315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opponent: 0
-  MoneyPerSeconds: 0
-  Money: 0
+  MoneyPerSeconds: 10
+  Money: 1000
   Exp: 0
 --- !u!114 &19829122 stripped
 MonoBehaviour:
@@ -1369,6 +1380,7 @@ Transform:
   - {fileID: 3772912855231231340}
   - {fileID: 200493948}
   - {fileID: 1073760847}
+  - {fileID: 670816653}
   m_Father: {fileID: 1862003567}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4379,6 +4391,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 431832, guid: a28fe55c0ae796843a354638b54d99c3, type: 3}
   m_PrefabInstance: {fileID: 669839295}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &670816652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670816653}
+  m_Layer: 0
+  m_Name: PlayerUnits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &670816653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670816652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 164950708}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &678493654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6160,6 +6203,7 @@ Transform:
   - {fileID: 15392373}
   - {fileID: 876946458}
   - {fileID: 1200366568}
+  - {fileID: 2065420751}
   m_Father: {fileID: 1862003567}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7122,6 +7166,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7266410959217427671, guid: 184fb788e7a69fa9586e946f769e38f9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a12c0ebdf9b05c07ae7a4074155f476, type: 3}
     - target: {fileID: 7266410959217427690, guid: 184fb788e7a69fa9586e946f769e38f9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14278,6 +14326,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053052120}
   m_Mesh: {fileID: 4300000, guid: 61235c7665fc4e84b8bb5455401ced70, type: 3}
+--- !u!1 &2065420750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2065420751}
+  m_Layer: 0
+  m_Name: EnemyUnits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2065420751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065420750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 859942277}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067006259
 GameObject:
   m_ObjectHideFlags: 0
@@ -15058,7 +15137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa9a7813f5c4fd0a2575c6fbf7cb361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawningPosition: {fileID: 0}
+  SpawningPosition: {fileID: 670816653}
   Health: 1000
   SpawnPoints:
   - {fileID: 1818316817}
@@ -15067,11 +15146,11 @@ MonoBehaviour:
   BaseLevel: 1
   LevelUpCost: 5000
   LevelUnits:
-  - BaseLevel: 0
+  - BaseLevel: 1
     AvailableUnits:
     - {fileID: 7983041262702332478, guid: d382c68aec4cb2c48aa7ea403ab9ff61, type: 3}
     - {fileID: 8832867973360531291, guid: 1f29e4c74252653a4b1edbfd76bc8e1d, type: 3}
-  - BaseLevel: 0
+  - BaseLevel: 2
     AvailableUnits:
     - {fileID: 4895249760557191681, guid: b436722014b335fc6b8a111ddf9cceff, type: 3}
     - {fileID: 6425152462949645365, guid: 3bd49f8ac7ceb2749ac73e3c4258b9da, type: 3}
@@ -15088,9 +15167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opponent: 0
-  MoneyPerSeconds: 0
+  MoneyPerSeconds: 10
   Money: 1000
-  Exp: 13
+  Exp: 0
 --- !u!33 &3772912855234031376
 MeshFilter:
   m_ObjectHideFlags: 0

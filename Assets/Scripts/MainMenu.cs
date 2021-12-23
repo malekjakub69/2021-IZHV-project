@@ -19,7 +19,6 @@ namespace Game
         {
             Debug.Log("Quit before"); 
             Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
             Debug.Log("Quit after"); 
         }
 
